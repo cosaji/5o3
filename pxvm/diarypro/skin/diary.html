@@ -1,0 +1,144 @@
+<!--SKIN_LOGS_HEAD_START-->
+<div id="logs">
+<!--SKIN_LOGS_HEAD_END-->
+
+	<!--SKIN_DIARY_HEAD_START-->
+	<div id="diary">
+		<h2>log</h2>
+	<!--SKIN_DIARY_HEAD_END-->
+
+		<!--SKIN_DIARY_START-->
+		<div class="diary">
+			<h3 class="subject">${ARTICLE_SUBJ}</h3>
+			<p class="info info1">
+				${ARTICLE_MONTH} ${ARTICLE_DAY} *${ARTICLE_YEAR}
+				<!--ARTICLE_FIELD_START-->| <a href="${INFO_PATH}?field=${ARTICLE_FNO}" title="Category : ${ARTICLE_FIELD}">${ARTICLE_FIELD}</a><!--ARTICLE_FIELD_END-->
+			</p>
+			<div class="text">
+				<!--ARTICLE_FILE_START--><p>${ARTICLE_FILES}</p><!--ARTICLE_FILE_END-->
+				<!--ARTICLE_ICON_START--><p>${ARTICLE_ICON}</p><!--ARTICLE_ICON_END-->
+				${ARTICLE_TEXT}
+			</div>
+			<p class="info info2">
+				<!--ARTICLE_DATE_START--><a href="${ARTICLE_URL}" title="Permalink : ${ARTICLE_SUBJ}">${ARTICLE_HOUR}:${ARTICLE_MINUTE}</a><!--ARTICLE_DATE_END-->
+				<!--ARTICLE_NAME_START-->| Posted by <a href="${INFO_PATH}?mode=profile&amp;user=${ARTICLE_USER}" title="Profile : ${ARTICLE_NAME}">${ARTICLE_NAME}</a><!--ARTICLE_NAME_END-->
+				<!--ARTICLE_COMMENT_START-->[<a href="${INFO_PATH}?mode=comment&amp;no=${ARTICLE_NO}#comment" title="この記事にコメントを投稿する">Comment:${ARTICLE_COMMENT}</a>]<!--ARTICLE_COMMENT_END-->
+				<!--ARTICLE_TRACKBACK_START-->[<a href="${INFO_PATH}?mode=trackback&amp;no=${ARTICLE_NO}#trackback" title="この記事にトラックバックを送信する">TB:${ARTICLE_TRACKBACK}</a>]<!--ARTICLE_TRACKBACK_END-->
+				<!--ARTICLE_PAINT_START-->| <a href="${INFO_PATH}?mode=admin&amp;work=paint&amp;pch=${ARTICLE_PAINT}" title="イラストを編集する">Paint</a><!--ARTICLE_PAINT_END-->
+				<!--ARTICLE_ADMIN_START-->| <a href="${INFO_PATH}?mode=admin&amp;work=edit&amp;edit=${ARTICLE_NO}&amp;exec_form=on" title="この記事を編集する">Edit</a> / <a href="${INFO_PATH}?mode=admin&amp;work=edit&amp;del=${ARTICLE_NO}&amp;exec_confirm=on" title="この記事を削除する">Del</a><!--ARTICLE_ADMIN_END-->
+			</p>
+		</div>
+		<!--SKIN_DIARY_END-->
+
+		<!--SKIN_TB_HEAD_START-->
+		<div class="list">
+			<h4>trackback</h4>
+			<ul>
+		<!--SKIN_TB_HEAD_END-->
+
+			<!--SKIN_TB_START-->
+				<li><a href="${TRACKBACK_URL}">${TRACKBACK_TITLE}</a> from ${TRACKBACK_BLOG} ${TRACKBACK_YEAR}.${TRACKBACK_MONTH}.${TRACKBACK_DAY}-${TRACKBACK_HOUR}:${TRACKBACK_MINUTE}</li>
+			<!--SKIN_TB_END-->
+
+		<!--SKIN_TB_FOOT_START-->
+			</ul>
+		</div>
+		<!--SKIN_TB_FOOT_END-->
+
+		<!--SKIN_CMT_HEAD_START-->
+		<div class="list">
+			<h4>comment</h4>
+			<dl>
+		<!--SKIN_CMT_HEAD_END-->
+
+			<!--SKIN_CMT_START-->
+				<dt>${ARTICLE_NAME} <!--ARTICLE_MAIL_START-->Mail<!--ARTICLE_MAIL_END--> <!--ARTICLE_URL_START-->URL<!--ARTICLE_URL_END--> ${ARTICLE_YEAR}.${ARTICLE_MONTH}.${ARTICLE_DAY}-${ARTICLE_HOUR}:${ARTICLE_MINUTE}<!--ARTICLE_EDIT_START--> <a href="${INFO_PATH}?mode=edit&amp;no=${ARTICLE_NO}" title="このコメントを編集する">Edit</a><!--ARTICLE_EDIT_END--></dt>
+					<dd><!--ARTICLE_ICON_START--><p>${ARTICLE_ICON}</p><!--ARTICLE_ICON_END-->${ARTICLE_TEXT}</dd>
+			<!--SKIN_CMT_END-->
+
+		<!--SKIN_CMT_FOOT_START-->
+			</dl>
+		</div>
+		<!--SKIN_CMT_FOOT_END-->
+
+	<!--SKIN_DIARY_FOOT_START-->
+	</div>
+	<!--SKIN_DIARY_FOOT_END-->
+
+	<!--SKIN_TRACKBACK_HEAD_START-->
+	<div id="trackback">
+		<h2>trackback</h2>
+		<!--ARTICLE_TRACKBACK_START-->
+		<ul>
+			<li><a href="${INFO_PATH}?mode=trackback&amp;no=${ARTICLE_NO}#contents" title="この記事にトラックバックを送信する">この記事にトラックバックを送信する</a></li>
+		</ul>
+		<!--ARTICLE_TRACKBACK_END-->
+	<!--SKIN_TRACKBACK_HEAD_END-->
+
+		<!--SKIN_TRACKBACK_START-->
+		<dl>
+			<dt><a href="${TRACKBACK_URL}">${TRACKBACK_TITLE}</a> from ${TRACKBACK_BLOG}</dt>
+				<dd>${TRACKBACK_EXCERPT}</dd>
+				<dd>${TRACKBACK_YEAR}.${TRACKBACK_MONTH}.${TRACKBACK_DAY}-${TRACKBACK_HOUR}:${TRACKBACK_MINUTE}</dd>
+		</dl>
+		<!--SKIN_TRACKBACK_END-->
+
+	<!--SKIN_TRACKBACK_FOOT_START-->
+	</div>
+	<!--SKIN_TRACKBACK_FOOT_END-->
+
+	<!--SKIN_COMMENT_HEAD_START-->
+	<div id="comment">
+		<h2>comment</h2>
+		<!--ARTICLE_COMMENT_START-->
+		<ul>
+			<li><a href="${INFO_PATH}?mode=comment&amp;no=${ARTICLE_NO}#form" title="この記事にコメントを投稿する">この記事にコメントを投稿する</a></li>
+		</ul>
+		<!--ARTICLE_COMMENT_END-->
+	<!--SKIN_COMMENT_HEAD_END-->
+
+		<!--SKIN_COMMENT_START-->
+		<div class="comment">
+			<h3>${ARTICLE_NAME} <!--ARTICLE_MAIL_START-->Mail<!--ARTICLE_MAIL_END--> <!--ARTICLE_URL_START-->URL<!--ARTICLE_URL_END--> ${ARTICLE_YEAR}.${ARTICLE_MONTH}.${ARTICLE_DAY}-${ARTICLE_HOUR}:${ARTICLE_MINUTE}<!--ARTICLE_EDIT_START--> <a href="${INFO_PATH}?mode=edit&amp;no=${ARTICLE_NO}" title="このコメントを編集する">Edit</a><!--ARTICLE_EDIT_END--></h3>
+			<div class="text">
+				<!--ARTICLE_ICON_START--><p>${ARTICLE_ICON}</p><!--ARTICLE_ICON_END-->
+				${ARTICLE_TEXT}
+			</div>
+		</div>
+		<!--SKIN_COMMENT_END-->
+
+	<!--SKIN_COMMENT_FOOT_START-->
+	</div>
+	<!--SKIN_COMMENT_FOOT_END-->
+
+	<!--SKIN_PAGE_START-->
+	<div id="page">
+		<ul>
+			<li><!--PAGE_PREV_START-->newer<!--PAGE_PREV_END--></li>
+			<li><!--PAGE_NEXT_START-->older<!--PAGE_NEXT_END--></li>
+		</ul>
+	</div>
+	<!--SKIN_PAGE_END-->
+
+	<!--SKIN_NAVI_HEAD_START-->
+	<div id="navi">
+		<ul>
+			<li>page</li>
+	<!--SKIN_NAVI_HEAD_END-->
+
+		<!--SKIN_NAVI_START-->
+			<li><!--NAVI_START-->${NAVI_NO}<!--NAVI_END--></li>
+		<!--SKIN_NAVI_END-->
+
+		<!--SKIN_NAVI_MORE_START-->
+			<li><!--NAVI_START-->...<!--NAVI_END--></li>
+		<!--SKIN_NAVI_MORE_END-->
+
+	<!--SKIN_NAVI_FOOT_START-->
+		</ul>
+	</div>
+	<!--SKIN_NAVI_FOOT_END-->
+
+<!--SKIN_LOGS_FOOT_START-->
+</div>
+<!--SKIN_LOGS_FOOT_END-->

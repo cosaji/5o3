@@ -1,0 +1,20 @@
+body{
+color: #333;
+background-color: #fcc;
+font-size: 12px;
+line-height: 150%;
+margin-left: 10px;
+background-image: url("m/lace_l.png");
+background-repeat: repeat-y;
+background-position: right 0
+}
+.m{
+font-size: 11px;
+line-height: 150%;
+}
+.right{
+text-align:right;
+margin-right: 45px;
+}
+a:link,a:visited,a:active     { color: #c41674; text-decoration: none }
+a:hover      { color: #ff6d94; text-decoration: none }

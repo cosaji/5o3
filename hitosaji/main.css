@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+	/* 基本 */
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #3f312b;
+	background: #f5f5dc;
+}
+p{
+	padding: 0px 10px;
+	color: #3f312b;
+	font-size: 11px;
+	line-height: 175%;
+}
+td{
+	color: #3f312b;
+	font-size: 11px;
+	line-height: 175%;
+}
+	/* ボックス */
+#container {
+	width: 900px;
+	margin: 0 auto;
+	padding: 0px;
+	color: #666666;
+	background: #ffffff;
+}
+#header {
+	width: auto;
+	padding: 10px 0px 0px 45px;
+	font-size: 20px;
+	background: #fce2c4;
+}
+#menu{
+	padding: 5px 25px;
+	font-family: 'Futura', sans-serif;
+}
+#navi {
+	float: left;
+	width: 130px;
+	padding: 10px;
+	background: #ffffff;
+
+}
+#main {
+	float: left;
+	width: 730px;
+	margin: 0px;
+	color: #666666;
+	background: #ffffff;
+	padding: 10px 10px 10px 9px;
+	border-left: 1px dotted #fce2c4;	
+}
+#footer {
+	clear: both;
+	width: auto;
+	padding: 5px;
+	color: #3f312b;
+	background: #f2f2b0;
+	text-align: center;
+	font-size: 10px;
+}
+.top{
+	text-align: right;
+	border-bottom: 1px dotted #fce2c4;
+	font-size: 11px;
+	font-family: 'Futura', sans-serif;
+	padding: 5px 15px;
+}	
+	/* 見出し */
+h1{
+	color: #ebf6f7;
+	background: #00a497;
+	margin: 0;
+	padding: 5px 16px;
+	font-size: 16px;
+	font-family: 'Futura', sans-serif;
+	/*角丸*/
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+h2 {
+	color: #9d8e87;
+	background: #f2f2b0;
+	margin: 10px 0 10px 0;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-family: 'Futura', sans-serif;
+}
+h3 {
+	border-bottom:1px dotted #eee9e6;  
+	color: #ff6347;
+	background-color:#ffffff;
+	margin:  10px 0 10px 0;
+	padding: 5px 7px 5px 10px;
+	font-size: 12px;
+	font-family: 'Futura', sans-serif;
+	}	
+	/* アンカー */
+a:link, a:visited{ 
+	color: #ffaa99;
+	text-decoration: none;
+}
+a:hover, a:active{ 
+	color: #ec6800;
+	text-decoration: none;
+}
+	/* メニューアンカー */
+a.menu:link,a.menu:visited{ 
+	color: #f6b894;
+	text-decoration: none;
+}
+a.menu:hover, a.menu:active{ 
+	color: #ff6347;
+	text-decoration: none;
+
+	/*　その他　*/
+.mention{
+	color: #dd3333;
+}

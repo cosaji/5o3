@@ -1,0 +1,273 @@
+<!--SKIN_NAVIGATION_HEAD_START-->
+<div id="navigation">
+<!--SKIN_NAVIGATION_HEAD_END-->
+
+	<!--SKIN_MENULIST_HEAD_START-->
+	<div class="block menulist">
+		<h2>contents</h2>
+		<ul>
+	<!--SKIN_MENULIST_HEAD_END-->
+
+		<!--SKIN_MENULIST_FIELD_START-->
+			<li>
+				${MENU_FIELD}
+		<!--SKIN_MENULIST_FIELD_END-->
+
+			<!--SKIN_MENU_HEAD_START-->
+				<ul>
+			<!--SKIN_MENU_HEAD_END-->
+
+				<!--SKIN_MENU_START-->
+					<li><a href="${MENU_URL}">${MENU_NAME}</a></li>
+				<!--SKIN_MENU_END-->
+
+			<!--SKIN_MENU_FOOT_START-->
+				</ul>
+			<!--SKIN_MENU_FOOT_END-->
+
+		<!--SKIN_MENULIST_DELIMITER_START-->
+			</li>
+		<!--SKIN_MENULIST_DELIMITER_END-->
+
+	<!--SKIN_MENULIST_FOOT_START-->
+		</ul>
+	</div>
+	<!--SKIN_MENULIST_FOOT_END-->
+
+	<!--SKIN_CALENDAR_HEAD_START-->
+	<div class="block calendar">
+		<h2>calendar</h2>
+		<table summary="${CALENDAR_THIS_YEAR}年${CALENDAR_THIS_MONTH}月のカレンダー">
+			<tr>
+				<th colspan="7"><a href="${INFO_PATH}?date=${CALENDAR_PREV_YEAR}${CALENDAR_PREV_MONTH}" title="${CALENDAR_PREV_YEAR}.${CALENDAR_PREV_MONTH}">${CALENDAR_PREV_MONTH}</a> | ${CALENDAR_THIS_YEAR}.${CALENDAR_THIS_MONTH} | <a href="${INFO_PATH}?date=${CALENDAR_NEXT_YEAR}${CALENDAR_NEXT_MONTH}" title="${CALENDAR_NEXT_YEAR}.${CALENDAR_NEXT_MONTH}">${CALENDAR_NEXT_MONTH}</a></th>
+			</tr>
+			<tr class="week">
+				<td>S</td>
+				<td>M</td>
+				<td>T</td>
+				<td>W</td>
+				<td>T</td>
+				<td>F</td>
+				<td>S</td>
+			</tr>
+	<!--SKIN_CALENDAR_HEAD_END-->
+
+			<!--SKIN_CALENDAR_WEEKHEAD_START-->
+			<tr>
+			<!--SKIN_CALENDAR_WEEKHEAD_END-->
+
+				<!--SKIN_CALENDAR_DAY_START-->
+				<td id="calendar_${CALENDAR_CODE}"><!--CALENDAR_DAY_START--><span class="day">${CALENDAR_DAY}</span><!--CALENDAR_DAY_END--></td>
+				<!--SKIN_CALENDAR_DAY_END-->
+
+				<!--SKIN_CALENDAR_SATDAY_START-->
+				<td id="calendar_${CALENDAR_CODE}"><!--CALENDAR_DAY_START--><span class="satday">${CALENDAR_DAY}</span><!--CALENDAR_DAY_END--></td>
+				<!--SKIN_CALENDAR_SATDAY_END-->
+
+				<!--SKIN_CALENDAR_SUNDAY_START-->
+				<td id="calendar_${CALENDAR_CODE}"><!--CALENDAR_DAY_START--><span class="sunday">${CALENDAR_DAY}</span><!--CALENDAR_DAY_END--></td>
+				<!--SKIN_CALENDAR_SUNDAY_END-->
+
+				<!--SKIN_CALENDAR_VOID_START-->
+				<td>-</td>
+				<!--SKIN_CALENDAR_VOID_END-->
+
+			<!--SKIN_CALENDAR_WEEKFOOT_START-->
+			</tr>
+			<!--SKIN_CALENDAR_WEEKFOOT_END-->
+
+	<!--SKIN_CALENDAR_FOOT_START-->
+		</table>
+	</div>
+	<!--SKIN_CALENDAR_FOOT_END-->
+
+	<!--SKIN_FIELD_HEAD_START-->
+	<div class="block fieldlist">
+		<h2>categories</h2>
+		<ul>
+	<!--SKIN_FIELD_HEAD_END-->
+
+		<!--SKIN_FIELD_START-->
+			<li>
+				<a href="${INFO_PATH}?field=${FIELD_NO}">${FIELD_NAME}(${FIELD_SIZE})</a>
+		<!--SKIN_FIELD_END-->
+
+			<!--SKIN_CHILD_HEAD_START-->
+				<ul>
+			<!--SKIN_CHILD_HEAD_END-->
+
+				<!--SKIN_CHILD_START-->
+					<li><a href="${INFO_PATH}?field=${FIELD_NO}">${FIELD_NAME}(${FIELD_SIZE})</a></li>
+				<!--SKIN_CHILD_END-->
+
+			<!--SKIN_CHILD_FOOT_START-->
+				</ul>
+			<!--SKIN_CHILD_FOOT_END-->
+
+		<!--SKIN_FIELD_DELIMITER_START-->
+			</li>
+		<!--SKIN_FIELD_DELIMITER_END-->
+
+	<!--SKIN_FIELD_FOOT_START-->
+		</ul>
+	</div>
+	<!--SKIN_FIELD_FOOT_END-->
+
+	<!--SKIN_IMAGE_HEAD_START-->
+	<div class="block image">
+		<h2>recent images</h2>
+		<p>
+	<!--SKIN_IMAGE_HEAD_END-->
+
+		<!--SKIN_IMAGE_START-->
+			<a href="${ARTICLE_URL}">${ARTICLE_IMAGE}</a>
+		<!--SKIN_IMAGE_END-->
+
+	<!--SKIN_IMAGE_FOOT_START-->
+		</p>
+	</div>
+	<!--SKIN_IMAGE_FOOT_END-->
+
+	<!--SKIN_LIST_HEAD_START-->
+	<div class="block entrylist">
+		<h2>recent entries</h2>
+		<dl>
+	<!--SKIN_LIST_HEAD_END-->
+
+		<!--SKIN_LIST_START-->
+			<dt><a href="${ARTICLE_URL}">${ARTICLE_SUBJ}</a><!--ARTICLE_NEW_START--> <em class="new">new!</em><!--ARTICLE_NEW_END--></dt>
+				<dd>${ARTICLE_YEAR}.${ARTICLE_MONTH}.${ARTICLE_DAY} ${ARTICLE_HOUR}:${ARTICLE_MINUTE}</dd>
+		<!--SKIN_LIST_END-->
+
+	<!--SKIN_LIST_FOOT_START-->
+		</dl>
+	</div>
+	<!--SKIN_LIST_FOOT_END-->
+
+	<!--SKIN_CMTLIST_HEAD_START-->
+	<div class="block cmtlist">
+		<h2>recent comments</h2>
+		<dl>
+	<!--SKIN_CMTLIST_HEAD_END-->
+
+		<!--SKIN_CMTLIST_START-->
+			<dt><a href="${INFO_PATH}?mode=comment&amp;no=${ARTICLE_PNO}#comment">${ARTICLE_SUBJ}</a><!--ARTICLE_NEW_START--> <em class="new">new!</em><!--ARTICLE_NEW_END--></dt>
+				<dd>${ARTICLE_YEAR}.${ARTICLE_MONTH}.${ARTICLE_DAY} ${ARTICLE_HOUR}:${ARTICLE_MINUTE}</dd>
+				<dd>${ARTICLE_NAME}</dd>
+		<!--SKIN_CMTLIST_END-->
+
+	<!--SKIN_CMTLIST_FOOT_START-->
+		</dl>
+	</div>
+	<!--SKIN_CMTLIST_FOOT_END-->
+
+	<!--SKIN_TBLIST_HEAD_START-->
+	<div class="block tblist">
+		<h2>recent trackbacks</h2>
+		<dl>
+	<!--SKIN_TBLIST_HEAD_END-->
+
+		<!--SKIN_TBLIST_START-->
+			<dt><a href="${INFO_PATH}?mode=trackback&amp;no=${TRACKBACK_PNO}#trackback">${TRACKBACK_TITLE}</a><!--TRACKBACK_NEW_START--> <em class="new">new!</em><!--TRACKBACK_NEW_END--></dt>
+				<dd>${TRACKBACK_YEAR}.${TRACKBACK_MONTH}.${TRACKBACK_DAY} ${TRACKBACK_HOUR}:${TRACKBACK_MINUTE}</dd>
+				<dd>${TRACKBACK_BLOG}</dd>
+		<!--SKIN_TBLIST_END-->
+
+	<!--SKIN_TBLIST_FOOT_START-->
+		</dl>
+	</div>
+	<!--SKIN_TBLIST_FOOT_END-->
+
+	<!--SKIN_PAST_HEAD_START-->
+	<div class="block archive">
+		<h2>archives</h2>
+		<ul>
+	<!--SKIN_PAST_HEAD_END-->
+
+		<!--SKIN_PAST_START-->
+			<li><a href="${INFO_PATH}?date=${PAST_YEAR}${PAST_MONTH}">${PAST_YEAR}.${PAST_MONTH}(${PAST_SIZE})</a></li>
+		<!--SKIN_PAST_END-->
+
+	<!--SKIN_PAST_FOOT_START-->
+		</ul>
+	</div>
+	<!--SKIN_PAST_FOOT_END-->
+
+	<!--SKIN_SEARCH_START-->
+	<div class="block search">
+		<h2>search</h2>
+		<form action="${INFO_PATH}" method="get">
+			<fieldset>
+				<legend>検索フォーム</legend>
+				<input type="hidden" name="mode" value="search" />
+				<input type="hidden" name="cond" value="and" />
+				<p><input type="text" name="word" size="20" value="" class="text" /> <input type="submit" value="GO" class="submit" /></p>
+			</fieldset>
+		</form>
+	</div>
+	<!--SKIN_SEARCH_END-->
+
+	<!--SKIN_LINKLIST_HEAD_START-->
+	<div class="block linklist">
+		<h2>links</h2>
+		<ul>
+	<!--SKIN_LINKLIST_HEAD_END-->
+
+		<!--SKIN_LINKLIST_FIELD_START-->
+			<li>
+				${LINK_FIELD}
+		<!--SKIN_LINKLIST_FIELD_END-->
+
+			<!--SKIN_LINK_HEAD_START-->
+				<ul>
+			<!--SKIN_LINK_HEAD_END-->
+
+				<!--SKIN_LINK_START-->
+					<li><a href="${LINK_URL}">${LINK_NAME}</a></li>
+				<!--SKIN_LINK_END-->
+
+			<!--SKIN_LINK_FOOT_START-->
+				</ul>
+			<!--SKIN_LINK_FOOT_END-->
+
+		<!--SKIN_LINKLIST_DELIMITER_START-->
+			</li>
+		<!--SKIN_LINKLIST_DELIMITER_END-->
+
+	<!--SKIN_LINKLIST_FOOT_START-->
+		</ul>
+	</div>
+	<!--SKIN_LINKLIST_FOOT_END-->
+
+	<!--SKIN_PROFILE_HEAD_START-->
+	<div class="block profile">
+		<h2>profile</h2>
+		<ul>
+	<!--SKIN_PROFILE_HEAD_END-->
+
+		<!--SKIN_PROFILE_START-->
+			<li><a href="${INFO_PATH}?mode=profile&amp;user=${PROFILE_USER}">${PROFILE_NAME}</a></li>
+		<!--SKIN_PROFILE_END-->
+
+	<!--SKIN_PROFILE_FOOT_START-->
+		</ul>
+	</div>
+	<!--SKIN_PROFILE_FOOT_END-->
+
+<!--SKIN_NAVIGATION_FOOT_START-->
+	<div class="block">
+		<h2>information</h2>
+		<p>
+			${INFO_DESCRIPTION}
+		</p>
+		<ul>
+			<li><a href="${INFO_PATH}?mode=rss" class="rss">RSS</a></li>
+			<li><a href="${INFO_PATH}?mode=admin" title="管理者用">login</a></li>
+		</ul>
+		<p>
+			Home<br />
+			<a href="${INFO_BACK}"><img src="${INFO_URL}skin/img/banner.gif" width="200" height="40" alt="" /></a>
+		</p>
+	</div>
+</div>
+<!--SKIN_NAVIGATION_FOOT_END-->

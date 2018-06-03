@@ -1,0 +1,175 @@
+{include file='iphones/header.html'}
+		<section>
+			<h1>ステータス</h1>
+			<ul>
+				<li>現在 <em>{$freo.user.id}</em> としてログインしています。権限は <em><!--{if $freo.user.authority == 'root'}-->管理者<!--{elseif $freo.user.authority == 'author'}-->投稿者<!--{elseif $freo.user.authority == 'guest'}-->ゲスト<!--{/if}--></em> です。</li>
+				<li>本体のバージョンは <em>{$freo.core.version}</em> です。</li>
+				<li><a href="{$freo.core.http_file}">サイトを確認する</a>。</li>
+			</ul>
+			<h1>管理メニュー</h1>
+			<h2>エントリー</h2>
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/entry">エントリー管理</a></li>
+				<li><a href="{$freo.core.http_file}/admin/entry_form">エントリー登録</a></li>
+			</ul>
+			<!--{if $freo.user.authority == 'root' and $freo.config.entry.category}-->
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/category">カテゴリー管理</a></li>
+			</ul>
+			<!--{/if}-->
+			<h2>ページ</h2>
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/page">ページ管理</a></li>
+				<li><a href="{$freo.core.http_file}/admin/page_form">ページ登録</a></li>
+			</ul>
+			<h2>コミュニティ</h2>
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/comment">コメント管理</a></li>
+				<li><a href="{$freo.core.http_file}/admin/trackback">トラックバック管理</a></li>
+			</ul>
+			<h2>ユーザー</h2>
+			<!--{if $freo.user.authority == 'root'}-->
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/user">ユーザー管理</a></li>
+			</ul>
+			<!--{/if}-->
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/profile_form">プロフィール編集</a></li>
+				<li><a href="{$freo.core.https_file}/admin/password_form">パスワード変更</a></li>
+			</ul>
+			<h2>プラグイン</h2>
+			<ul class="menu">
+				<!--{foreach from=$freo.plugin|smarty:nodefaults item='plugin'}-->
+				<!--{if $plugin.admin}-->
+				<li><a href="{$freo.core.http_file}/{$plugin.admin}">{$plugin.name}</a></li>
+				<!--{php}$flag = 1;{/php}-->
+				<!--{/if}-->
+				<!--{/foreach}-->
+				<!--{php}if (!$flag) :{/php}-->
+				<li>管理ページはありません</li>
+				<!--{php}endif;{/php}-->
+			</ul>
+			<h2>システム</h2>
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/media">メディア管理</a></li>
+				<!--{if $freo.user.authority == 'root'}-->
+				<!--{if $freo.config.entry.restriction or $freo.config.page.restriction}-->
+				<li><a href="{$freo.core.http_file}/admin/group">グループ管理</a></li>
+				<!--{/if}-->
+				<!--{if $freo.config.entry.filter or $freo.config.page.filter}-->
+				<li><a href="{$freo.core.http_file}/admin/filter">フィルター管理</a></li>
+				<!--{/if}-->
+				<li><a href="{$freo.core.http_file}/admin/option">オプション管理</a></li>
+				<!--{if $freo.config.view.information}-->
+				<li><a href="{$freo.core.http_file}/admin/information_form">インフォメーション管理</a></li>
+				<!--{/if}-->
+				<li><a href="{$freo.core.http_file}/admin/config">設定管理</a></li>
+				<!--{/if}-->
+			</ul>
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/plugin">プラグイン一覧</a></li>
+				<!--{if $freo.user.authority == 'root'}-->
+				<li><a href="{$freo.core.http_file}/admin/log">ログ閲覧</a></li>
+				<!--{/if}-->
+				<li><a href="{$freo.core.http_file}/admin/status">ステータス</a></li>
+				<li><a href="{$freo.core.http_file}">サイト確認</a></li>
+				<li><a href="{$freo.core.https_file}/login?freo%5Bsession%5D=logout">ログアウト</a></li>
+			</ul>
+			<h1>登録データ</h1>
+			<table summary="登録データ">
+				<thead>
+					<tr>
+						<th>項目</th>
+						<th>登録件数</th>
+						<th>未承認</th>
+						<th>更新日時</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>項目</th>
+						<th>登録件数</th>
+						<th>未承認</th>
+						<th>更新日時</th>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td>エントリー</td>
+						<td class="number">{$entry_count}</td>
+						<td class="number">{$entry_count-$entry_approved}</td>
+						<td><!--{if $entry_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$entry_modified|date_format:'%H:%M:%S'}<!--{else}-->{$entry_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
+					</tr>
+					<tr>
+						<td>ページ</td>
+						<td class="number">{$page_count}</td>
+						<td class="number">{$page_count-$page_approved}</td>
+						<td><!--{if $page_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page_modified|date_format:'%H:%M:%S'}<!--{else}-->{$page_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
+					</tr>
+					<tr>
+						<td>コメント</td>
+						<td class="number">{$comment_count}</td>
+						<td class="number">{$comment_count-$comment_approved}</td>
+						<td><!--{if $comment_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$comment_modified|date_format:'%H:%M:%S'}<!--{else}-->{$comment_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
+					</tr>
+					<tr>
+						<td>トラックバック</td>
+						<td class="number">{$trackback_count}</td>
+						<td class="number">{$trackback_count-$trackback_approved}</td>
+						<td><!--{if $trackback_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$trackback_modified|date_format:'%H:%M:%S'}<!--{else}-->{$trackback_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
+					</tr>
+					<tr>
+						<td>ユーザー</td>
+						<td class="number">{$user_count}</td>
+						<td class="number">{$user_count-$user_approved}</td>
+						<td><!--{if $user_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$user_modified|date_format:'%H:%M:%S'}<!--{else}-->{$user_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>ファイルサイズ</h1>
+			<table summary="ファイルサイズ">
+				<thead>
+					<tr>
+						<th>項目</th>
+						<th>ファイルサイズ</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>項目</th>
+						<th>ファイルサイズ</th>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td>エントリーファイル</td>
+						<td class="number">{$entry_file_size/1024|intval}KB</td>
+					</tr>
+					<tr>
+						<td>エントリーイメージ</td>
+						<td class="number">{$entry_image_size/1024|intval}KB</td>
+					</tr>
+					<tr>
+						<td>エントリーオプションファイル</td>
+						<td class="number">{$entry_option_size/1024|intval}KB</td>
+					</tr>
+					<tr>
+						<td>ページファイル</td>
+						<td class="number">{$page_file_size/1024|intval}KB</td>
+					</tr>
+					<tr>
+						<td>ページイメージ</td>
+						<td class="number">{$page_image_size/1024|intval}KB</td>
+					</tr>
+					<tr>
+						<td>ページオプションファイル</td>
+						<td class="number">{$page_option_size/1024|intval}KB</td>
+					</tr>
+					<tr>
+						<td>メディアファイル</td>
+						<td class="number">{$media_size/1024|intval}KB</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+{include file='iphones/footer.html'}

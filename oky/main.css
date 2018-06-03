@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+	/* 基本 */
+
+body {
+	background-color:#D2D2E6;
+	background-image: url("m/bg_snow.png");
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	margin: 0px;
+	padding: 0px;
+	color: #ffffff;
+	font-size: 12px;
+	line-height:175%;
+}
+p {
+	margin: 10 10 10 20 ;
+}
+td {
+	width: auto;
+	margin: 20px 15px 10px 15px;
+	padding: 0px;
+	color: #666666;
+	background-color:#ffffff;
+	font-size: 11px;
+	line-height:150%;
+}
+table{
+	margin: 10 10 10 20 ;}
+
+	/* ボックス */
+ 
+
+#container {
+	width: 800px;
+	margin: 0 auto;
+	padding: 0px;
+	color: #666666;
+	background-color:#ffffff;
+}
+
+
+	/* メニューアンカー */
+a.menu:link,a.menu:visited{ 
+	color: #ffffff;
+	text-decoration: none;
+}
+a.menu:hover,a.menu:active{ 
+	color: #6b8e23;
+	text-decoration: none;
+}
+#main {
+	width: auto;
+	margin: 0px 15px 10px 15px;
+	padding: 0px;
+	color: #666666;
+	background-color:#ffffff;
+	font-size: 11px;
+	line-height:150%;
+}
+#footer {
+	width: ;
+	margin:0 0 0 0;
+	padding: 10px 20px 10px 20px;
+	background-color:#e9967a;
+	color:#ffffff;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+	font-family: 'Futura', sans-serif;
+}
+
+	/* 見出し */
+h2 {
+	color: #4e454a;
+	background-color:#f5f5dc;
+	margin: 10px 0 10px 0;
+	padding: 8px 8px 8px 16px;
+	font-size: 16px;
+	font-family: 'Futura', sans-serif;
+}
+h3 {
+	border-bottom:1px dotted #eee9e6;  
+	color: #6b8e23;
+	background-color:#ffffff;
+	margin:  10px 0 10px 0;
+	padding: 5px 7px 5px 16px;
+	font-size: 12px;
+	font-family: 'Futura', sans-serif;
+	}
+h4 {
+	border-left:7px solid #f6f4f2;  
+	color: #4e454a;
+	background-color#dc143c;
+	margin: 10px 0 10px 7px;
+	padding: 2px 7px 2px 7px;
+	font-size: 12px;
+}
+ul{	
+	line-height:175%;
+	list-style-image: url(images/li.png);
+}
+
+
+	/* アンカー */
+a:link,a:visited{ 
+	color: #6b8e23;
+	text-decoration: none;
+}
+a:hover,a:active{ 
+	color: #c3d825;
+	text-decoration: none;
+}

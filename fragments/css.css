@@ -1,0 +1,35 @@
+body{
+background-color: #0a1656;
+background-image: url("m/bg.jpg");
+background-repeat:repeat-x ;
+background-attachment: fixed;
+}
+td,body{
+color: #302833;
+font-size: 12px;
+line-height: 150%;
+margin: 0;
+}
+td,#box {
+width:600px;
+visibility: visible; position:  relative;
+color: #333333;
+font-size: 12px;
+line-height: 150%;
+background-color: #eeeeee;
+}
+#small {
+width:480px;
+visibility: visible; position:  relative;
+color: #666666;
+font-size: 11px;
+line-height: 150%;
+text-align:left;
+}
+
+a:link,a:active,a:visited{
+color: #2255ee; text-decoration: none
+}
+a:hover{
+color: #e95464
+}

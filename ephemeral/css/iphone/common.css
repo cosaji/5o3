@@ -1,0 +1,361 @@
+@charset "utf-8";
+
+/********* HTMLリセット *********************************************/
+
+html, body, div, header, footer, section, article, aside, menu, nav, hgroup, figure, dialog, audio, video, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, pre, blockquote, th, td, form, fieldset, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+header, footer, section, article, aside, menu, nav, hgroup, figure, dialog, audio, video {
+	display: block;
+}
+nav ul li {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+em, strong, small, code, address, th {
+	font-size: 100%;
+	font-weight: normal;
+	font-style: normal;
+}
+ul, ol {
+	list-style: none;
+}
+q:before, q:after {
+	content: "";
+}
+abbr, acronym {
+	border: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th {
+	text-align: left;
+}
+fieldset, img {
+	border: 0;
+}
+
+/********* HTML再定義 ***********************************************/
+
+body {
+	line-height: 1.4;
+	background-color: #EEEEEE;
+	color: #222222;
+	font-size: 80%;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+section {
+	margin: 10px 10px 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #AAAAAA;
+	word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #666666;
+	font-weight: bold;
+}
+p {
+	margin: 10px 0;
+}
+em, strong {
+	font-style: normal;
+	font-weight: bold;
+}
+ul {
+	margin: 10px 20px;
+}
+ul li {
+	list-style: disc;
+}
+ol {
+	margin: 10px 20px;
+}
+ol li {
+	list-style: decimal;
+}
+dl {
+	margin: 10px 0;
+}
+dl dd {
+	margin-left: 30px;
+}
+pre {
+	overflow: auto;
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid #AAAAAA;
+}
+code {
+	color: #000080;
+}
+pre, code {
+	line-height: 1.2;
+	font-family: monospace;
+}
+blockquote {
+	overflow: auto;
+	margin: 10px 0;
+	padding: 0 15px;
+	border-left: 2px solid #7777AA;
+}
+blockquote div, blockquote p, blockquote li, blockquote dt, blockquote dd {
+	color: #777777;
+}
+
+table {
+	margin: 15px 0;
+}
+table tr th {
+	padding: 5px;
+	border: 1px solid #999999;
+	background-color: #DDDDDD;
+	font-weight: bold;
+	text-align: center;
+}
+table tr td {
+	padding: 5px;
+	border: 1px solid #999999;
+	background-color: #FFFFFF;
+}
+table tr td input {
+	margin: -2px 0;
+}
+
+form {
+	margin: 20px 0;
+	padding: 10px;
+	border: 1px solid #222222;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+}
+form legend {
+	display: none;
+}
+form dl dt {
+	margin: 0 0 5px 0;
+	font-weight: bold;
+}
+form dl dt em {
+	padding: 3px;
+	border-radius: 4px;
+	background-color: #CC0000;
+	color: #FFFFFF;
+	font-size: 90%;
+	font-weight: bold;
+}
+form dl dd {
+	margin: 0 0 15px 0;
+}
+form dl dd input, form dl dd textarea, form dl dd select {
+	padding: 5px;
+}
+form ul {
+	margin: 15px 0;
+}
+form ul li {
+	list-style: none;
+}
+form p {
+	margin: 20px 0;
+	text-align: center;
+}
+form p input {
+	padding: 5px 20px 7px;
+	border: 1px solid #FFFFFF;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 0 3px #333333;
+	background-color: #222222;
+	background: -webkit-gradient(linear, left top, left bottom, from(#999999), color-stop(45%, #888888), color-stop(55%, #444444), to(#333333));
+	color: #FFFFFF;
+	font-size: 120%;
+	text-shadow: 1px 1px #666666;
+}
+
+figure {
+	margin: 10px 0;
+}
+
+a {
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+section h1 {
+	margin: 10px 0;
+	font-size: 120%;
+}
+section h2 {
+	margin: 10px 0;
+	font-size: 110%;
+}
+section h3, section h4, section h5, section h6 {
+	margin: 10px 0;
+	font-size: 100%;
+}
+
+/********* ヘッダー *************************************************/
+
+header {
+	background-color: #333333;
+	background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#333333));
+}
+
+header h1 {
+	overflow: hidden;
+	line-height: 40px;
+	margin: 0 auto;
+	width: 160px;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 130%;
+	text-align: center;
+	text-shadow: 1px 1px #222222;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+header nav#back {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+header nav#pc {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+header nav ul {
+	margin: 0;
+	border: 1px solid #222222;
+	border-radius: 4px;
+	background-color: #222222;
+	background: -webkit-gradient(linear, left top, left bottom, from(#999999), color-stop(45%, #888888), color-stop(55%, #444444), to(#333333));
+}
+header nav ul li a {
+	display: block;
+	padding: 5px 15px;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-shadow: 1px 1px #222222;
+}
+
+/********* コンテンツ ***********************************************/
+
+body>nav {
+	display: none;
+}
+
+section form textarea {
+	width: 265px;
+}
+
+section h1 {
+	color: #222222;
+}
+
+section ul.menu {
+	margin: 10px 0;
+	border: 1px solid #222222;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+}
+section ul.menu li {
+	overflow: hidden;
+	line-height: 40px;
+	list-style: none;
+	height: 40px;
+	border-bottom: 1px solid #222222;
+}
+section ul.menu li:last-child {
+	border: 0;
+}
+section ul.menu li a {
+	display: block;
+	padding: 0 10px;
+	color: #222222;
+	text-decoration: none;
+}
+
+/********* フッター *************************************************/
+
+footer h1 {
+	display: none;
+}
+
+footer nav {
+	padding: 20px 10px;
+	background-color: #AAAAAA;
+}
+footer nav ul {
+	margin: 0;
+	border: 1px solid #222222;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+}
+footer nav ul li {
+	line-height: 40px;
+	height: 40px;
+	border-bottom: 1px solid #222222;
+}
+footer nav ul li:last-child {
+	border: 0;
+}
+footer nav ul li a {
+	display: block;
+	padding: 0 10px;
+	color: #222222;
+	text-decoration: none;
+}
+
+/********* 個別指定 *************************************************/
+
+dl dd.list ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+form dl dd.list {
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+}
+form dl dd.list ul {
+	margin: 0;
+}
+form dl dd.list ul li ul {
+	margin-left: 20px;
+}
+
+#action {
+	overflow: hidden;
+	margin: 20px 0;
+	padding: 10px 10px 10px 65px;
+	border: 1px solid #222222;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+}
+#action form {
+	float: left;
+	margin: 0 4px 0 0;
+	padding: 0;
+	border: 0;
+}
+
+.complete {
+	color: #00AA00;
+	font-weight: bold;
+}
+.attention {
+	color: #FF0000;
+	font-weight: bold;
+}
+.number {
+	text-align: right;
+}

@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+body{
+	margin: 0px;
+	padding: 0px;
+	color: #3f312b;
+//	background: #e6e6fa;
+	background: #fff;
+	background-image: url(../img/bg.png);
+	background-position: -70px top;
+	font-family: "Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo, serif;
+}
+.Cookie{ font-family: 'Cookie', cursive; } //webfont
+#gamut{ margin: 0; padding: 0; }
+#header,#middle,#footer{ margin: 0 auto; padding: 10px; width: 980px;	background: #fff; }
+.cleas{ clear: both }
+.columnL, .columnR{
+	width: 485px;
+}
+.columnL{ float: left; }
+.columnR{ float: right; }
+h1{ display: none; margin: 0;}
+h2{ 
+	margin: 0;
+	padding: 5px 20px;
+	background: #f8f8ff;
+	border: dotted 1px pink;
+	border-right: none;
+	border-left: none;
+	font-size: 16px;
+	font-family: serif;
+	clear: both;
+}
+h2 .title{
+	font-family: "Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo, serif;
+}
+h2 .Cookie{
+	margin: auto 20px;
+	color: #00ced1;
+}
+h3{
+	margin: 5px auto;
+	padding: 3px 20px;
+	color: #595857;
+	background: #fffffc;
+	border: dotted 1px #f8e58c;
+	border-right: none;
+	border-left: none;
+	font-size: 14px;
+	font-family: "Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo, serif;
+	clear: both;
+}
+p,td,th{
+	font-size: 12px;
+	line-height: 200%;
+}
+p,table{ margin: 20px; }
+th{
+	vertical-align: top;
+	padding-right: 1em;
+	color: #5a79ba;
+}
+.em{
+	font-size: 14px;
+	line-height: 180%;	
+}
+a{ color: #00a3af; text-decoration: none;}
+a:hover{ color: #83ccd2; }
+
+img.topimg{ margin: 0; padding: 0; width: 100%}
+
+
+/*メンバー一覧*/
+.member{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 220px;
+	padding-top: 10px;
+	float: left;
+	border-top: 3px solid #a688bd; 
+}
+.member2{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 220px;
+	height: 100px;
+	padding-top: 10px;
+	float: left;
+	border-top: 3px solid #a688bd; 
+}
+.name{
+	padding: 3px;
+	background: #eaedf7;
+	margin-bottom: -5px;
+	font-weight: bold;
+}
+.pixivUrl,.url,.genre1, .genre2{
+	padding: 2px;
+	margin-right: 2px;
+	color: #fff;
+	font-size: smaller;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+a.pixivUrl{
+	background: #00a1e9;
+	text-decoration: none;
+	border: 1px solid #0068b7;
+}
+a:hover.pixivUrl{
+	color: #fff;
+	background: #a0d8ef;
+	border: 1px solid #00a1e9;
+}
+/*URL*/
+a.url{
+	background: #20b2aa;
+	text-decoration: none;
+	border: 1px solid #5f9ea0;
+}
+a:hover.url{
+	color: #fff;
+	background: #afeeee;
+	border: 1px solid #20b2aa;
+}
+/*ジャンル*/
+.genre1, .genre2{
+	margin-bottom: 10px;
+	padding: 2px;
+}
+.genre1{
+	background: #a688bd;
+	border: 1px solid #47266e;
+}
+.genre2{
+	background: #8d93c8;
+	border: 1px solid #4d4398;
+}
+.scroll{
+	height:160px;
+	overflow-y: scroll 
+}

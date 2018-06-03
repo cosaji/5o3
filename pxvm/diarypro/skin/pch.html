@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PCHViewer</title>
+<style type="text/css">
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #F0F0F0;/* 背景色 */
+	font-family: Tahoma, Verdana, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	line-height: 1.6;
+}
+#container {
+	padding: 30px 15px 15px 15px;
+}
+#container h1 {
+	display: none;
+}
+#container p a img {
+	border: 3px solid #FAFAFA;
+}
+#container ul {
+	list-style-type: none;
+	position: absolute;
+	top: 0;
+	right: 15px;
+	text-align: right;
+	line-height: 1;
+}
+#container ul li a {
+	display: block;
+	width: 7em;
+	margin: 0 0 0 auto;
+	padding: 5px 0;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#container ul li a:link, #container ul li a:visited {
+	border-top: none;
+	background: #666666;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#container ul li a:hover, #container ul li a:active {
+	border-top: none;
+	background: #FFFFFF;
+	color: #666666;
+	text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+	<h1>PCHViewer</h1>
+	<applet code="${CANVAS_CODE}" archive="${CANVAS_ARCHIVE}" name="pch" width="500" height="450">
+		<param name="speed" value="-1" />
+		<param name="pch_file" value="${CANVAS_PCH}" />
+		<param name="buffer_progress" value="false" />
+		<param name="buffer_canvas" value="false" />
+		<param name="res.zip" value="${CANVAS_RESZIP}" />
+		<param name="tt.zip" value="${CANVAS_TTZIP}" />
+		<param name="layer_count" value="3" />
+		<param name="layer_max" value="8" />
+		<param name="layer_last" value="2" />
+		<param name="tt_size" value="31" />
+	</applet>
+	<ul><li><a href="javascript:history.back();" title="戻る">back</a></li></ul>
+</div>
+</body>
+</html>

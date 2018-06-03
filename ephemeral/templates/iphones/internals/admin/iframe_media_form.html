@@ -1,0 +1,168 @@
+{include file='iphones/internals/admin/iframe_header.html'}
+		<!--{if $freo.query.directory}-->
+		<section>
+			<h1><!--{if $smarty.get.name}-->ディレクトリ名変更<!--{else}-->ディレクトリ作成<!--{/if}--></h1>
+			<!--{if $errors}-->
+			<ul class="attention">
+				<!--{foreach from=$errors|smarty:nodefaults item='error'}-->
+				<li>{$error}</li>
+				<!--{/foreach}-->
+			</ul>
+			<!--{/if}-->
+		<!--{if $smarty.get.name}-->
+			<ul>
+				<li><!--{if $freo.query.path}--><code>{$freo.query.path}</code> 内にある<!--{/if}-->ディレクトリ <code>{$smarty.get.name}</code> の名前を変更します。</li>
+				<li><a href="{$freo.core.http_file}/admin/media{if $freo.query.path}?path={$freo.query.path}&amp;{else}?{/if}type=iframe"><!--{if $freo.query.path}-->この階層の<!--{/if}-->メディアを一欄表示する</a>。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_form?directory=1&amp;name={$smarty.get.name}&amp;path={$freo.query.path}&amp;type=iframe" method="post">
+				<fieldset>
+					<legend>ディレクトリ名変更フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<input type="hidden" name="media[exec]" value="rename_directory" />
+					<input type="hidden" name="media[path]" value="{$freo.query.path}" />
+					<input type="hidden" name="media[directory_org]" value="{$smarty.get.name}" />
+					<dl>
+						<dt>ディレクトリ名</dt>
+							<dd><input type="text" name="media[directory]" size="30" value="{$smarty.get.name}" /></dd>
+					</dl>
+					<p><input type="submit" value="変更する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<section>
+			<h1>ディレクトリ移動</h1>
+			<ul>
+				<li>移動先を選択してください。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_move?directory=1&amp;name={$smarty.get.name}&amp;path={$freo.query.path}&amp;type=iframe" method="post">
+				<fieldset>
+					<legend>メディア移動フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<dl>
+						<dt>移動先</dt>
+							<dd>
+								<select name="media[path]">
+									<option value="">メディア管理ディレクトリ直下</option>
+									<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
+									<!--{if $freo.query.path != $directory and $freo.query.path|cat:$smarty.get.name|cat:'/' != $directory}-->
+									<option value="{$directory}">{$directory}</option>
+									<!--{/if}-->
+									<!--{/foreach}-->
+								</select>
+							</dd>
+					</dl>
+					<p><input type="submit" value="移動する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<section>
+			<h1>ディレクトリ削除</h1>
+			<ul>
+				<li>このディレクトリを削除するには、<em>削除ボタン</em>を押してください。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_delete?type=iframe" method="get" rel="delete">
+				<fieldset>
+					<legend>ディレクトリ削除フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<input type="hidden" name="directory" value="1" />
+					<input type="hidden" name="name" value="{$smarty.get.name}/" />
+					<input type="hidden" name="path" value="{$freo.query.path}" />
+					<p><input type="submit" value="削除する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<!--{else}-->
+			<ul>
+				<li><!--{if $freo.query.path}--><code>{$freo.query.path}</code> 内に<!--{/if}-->ディレクトリを作成します。</li>
+				<li><a href="{$freo.core.http_file}/admin/media{if $freo.query.path}?path={$freo.query.path}&amp;{else}?{/if}type=iframe"><!--{if $freo.query.path}-->この階層の<!--{/if}-->メディアを一欄表示する</a>。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_form?directory=1{if $freo.query.path}&amp;path={$freo.query.path}{/if}&amp;type=iframe" method="post">
+				<fieldset>
+					<legend>ディレクトリ作成フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<input type="hidden" name="media[exec]" value="insert_directory" />
+					<input type="hidden" name="media[path]" value="{$freo.query.path}" />
+					<dl>
+						<dt>ディレクトリ名</dt>
+							<dd><input type="text" name="media[directory]" size="30" value="{$input.media.directory}" /></dd>
+					</dl>
+					<p><input type="submit" value="作成する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<!--{/if}-->
+		<!--{else}-->
+		<!--{if $freo.query.name}-->
+		<section>
+			<h1>ファイル名変更</h1>
+			<!--{if $errors}-->
+			<ul class="attention">
+				<!--{foreach from=$errors|smarty:nodefaults item='error'}-->
+				<li>{$error}</li>
+				<!--{/foreach}-->
+			</ul>
+			<!--{/if}-->
+			<ul>
+				<li>ファイル <code>{$smarty.get.name}</code> の名前を変更します。</li>
+				<li><a href="{$freo.core.http_file}/admin/media{if $freo.query.path}?path={$freo.query.path}&amp;{else}?{/if}type=iframe"><!--{if $freo.query.path}-->この階層の<!--{/if}-->メディアを一欄表示する</a>。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_form?name={$smarty.get.name}&amp;path={$freo.query.path}&amp;type=iframe" method="post">
+				<fieldset>
+					<legend>ファイル名変更フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<input type="hidden" name="media[exec]" value="rename" />
+					<input type="hidden" name="media[path]" value="{$freo.query.path}" />
+					<input type="hidden" name="media[file_org]" value="{$smarty.get.name}" />
+					<dl>
+						<dt>ファイル名</dt>
+							<dd><input type="text" name="media[file]" size="30" value="{$smarty.get.name}" /></dd>
+					</dl>
+					<p><input type="submit" value="変更する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<section>
+			<h1>ファイル移動</h1>
+			<ul>
+				<li>移動先を選択してください。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_move?name={$smarty.get.name}&amp;path={$freo.query.path}&amp;type=iframe" method="post">
+				<fieldset>
+					<legend>メディア移動フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<input type="hidden" name="media[file]" value="{$smarty.get.name}" />
+					<dl>
+						<dt>移動先</dt>
+							<dd>
+								<select name="media[path]">
+									<option value="">メディア管理ディレクトリ直下</option>
+									<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
+									<!--{if $freo.query.path != $directory}-->
+									<option value="{$directory}">{$directory}</option>
+									<!--{/if}-->
+									<!--{/foreach}-->
+								</select>
+							</dd>
+					</dl>
+					<p><input type="submit" value="移動する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<section>
+			<h1>ファイル削除</h1>
+			<ul>
+				<li>このファイルを削除するには、<em>削除ボタン</em>を押してください。</li>
+			</ul>
+			<form action="{$freo.core.http_file}/admin/media_delete?type=iframe" method="get" rel="delete">
+				<fieldset>
+					<legend>ファイル削除フォーム</legend>
+					<input type="hidden" name="freo[token]" value="{$token}" />
+					<input type="hidden" name="name" value="{$smarty.get.name}" />
+					<input type="hidden" name="path" value="{$freo.query.path}" />
+					<p><input type="submit" value="削除する" /></p>
+				</fieldset>
+			</form>
+		</section>
+		<!--{/if}-->
+		<!--{/if}-->
+{include file='iphones/internals/admin/iframe_footer.html'}

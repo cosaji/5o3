@@ -1,0 +1,26 @@
+		<footer>
+			<h1>メニュー</h1>
+			<nav>
+				<ul>
+					<li><a href="{$freo.core.http_file}">トップページ</a></li>
+					<!--{if !$freo.user.authority}-->
+					<li><a href="{$freo.core.https_file}/login">ログイン</a></li>
+					<!--{/if}-->
+					<!--{if !$freo.user.authority and $freo.config.user.regist}-->
+					<li><a href="{$freo.core.http_file}/regist">ユーザー登録</a></li>
+					<!--{/if}-->
+					<!--{if $freo.user.authority == 'root' or $freo.user.authority == 'author'}-->
+					<li><a href="{$freo.core.http_file}/admin">管理者用ページ</a></li>
+					<!--{elseif $freo.user.authority == 'guest'}-->
+					<li><a href="{$freo.core.http_file}/admin">ユーザー用ページ</a></li>
+					<!--{else}-->
+					<li><a href="{$freo.core.http_file}/reissue">パスワード再発行</a></li>
+					<!--{/if}-->
+					<!--{if $freo.user.authority != 'root' and $freo.user.authority != 'author' and ($freo.config.entry.filter or $freo.config.page.filter)}-->
+					<li><a href="{$freo.core.http_file}/filter">フィルター設定</a></li>
+					<!--{/if}-->
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>

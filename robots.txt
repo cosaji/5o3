@@ -1,0 +1,5 @@
+User-agent: * 
+Disallow: /cs/
+
+User-Agent: nicobot0.1 (+http://www.nicob.jp/?m=default&a=info&p=help)
+Disallow: /

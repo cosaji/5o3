@@ -1,0 +1,42 @@
+body {
+color: #333;
+font-size: 12px;
+line-height: 150%;
+margin-left: 30px;
+background: #fcc url("m/lace_r.png") repeat-y fixed left 0;
+}
+.m{
+font-size: 11px;
+line-height: 150%;
+}
+.box {
+width: 540px;
+clear: both;
+}
+.menu {
+font-size: 11px;
+line-height: 125%;
+margin-left: 30px;
+padding: 10px 30px;
+width: 420px;
+clear: both;
+border: dotted 1px #ffa8bd;
+}
+.date {
+color: #666;
+font-size: 11px;
+line-height: 125%;
+text-align: right;
+margin-right: 30px;
+}
+.more {
+font-size: 11px;
+line-height: 125%;
+margin-left: 30px;
+padding: 10px 30px;
+width: 420px;
+}
+
+
+a:link,a:visited,a:active     { color: #c41674; text-decoration: none }
+a:hover      { color: #ff6d94; text-decoration: none }

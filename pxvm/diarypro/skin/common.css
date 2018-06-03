@@ -1,0 +1,1024 @@
+@charset "utf-8";
+/*
+	wdp2_distance | lastup 2009.06.05
+	http://www.usamimi.info/~witchmakers/
+	----------------------------------------------
+	★で検索すると大まかな指定部分に飛びます
+	----------------------------------------------
+	1. リセット
+	2. 基礎
+	3. レイアウト
+	4. 各部詳細
+	5. 本文装飾
+	6. おまけ
+*/
+/*================================================
+	1. リセット
+================================================*/
+html, body, div, h1, h2, h3, h4, h5, h6, address, blockquote, p, pre, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-size: 100%;
+}
+address, code, em, strong, th {
+	font-style: normal;
+	font-weight: normal;
+}
+ul, ol {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th {
+	text-align: left;
+}
+img {
+	vertical-align: top;
+}
+img, fieldset {
+	border: 0;
+}
+legend {
+	display: none;
+}
+@media screen {
+	body {
+		letter-spacing: 1px;
+	}
+	br {
+		letter-spacing: 0;
+	}
+}
+/*================================================
+	2. 基礎
+================================================*/
+body, th, td {
+	color: #5F5F5F;/* 基本文字色★ */
+	font-family: Tahoma, Verdana, sans-serif;
+	font-size: 12px;/* 基本文字サイズ★ */
+	line-height: 1.7;
+}
+strong {
+	font-weight: bold;
+}
+em {
+	margin: 0 3px;
+	padding: 1px 5px;
+	background: #F0F0F0;
+	color: #000000;
+}
+ins {
+	border-bottom: 1px dashed #D9D9D9;
+	color: #999999;
+	text-decoration: none;
+}
+/*------------------------------------------------
+	リンク★
+------------------------------------------------*/
+a:link {/* 未読 */
+	color: #0084CF;
+	text-decoration: none;
+}
+a:visited {/* 既読 */
+	color: #0068A3;
+	text-decoration: none;
+}
+a:hover {/* マウスオーバー */
+	color: #000000;
+	text-decoration: underline;
+}
+a:active {/* アクティブ */
+	color: #000000;
+	text-decoration: underline;
+}
+/*------------------------------------------------
+	画像リンク★
+------------------------------------------------*/
+a:link img {/* 未読 */
+	border: 1px solid #0084CF;
+}
+a:visited img {/* 既読 */
+	border: 1px solid #0068A3;
+}
+a:hover img {/* マウスオーバー */
+	border: 1px solid #000000;
+}
+a:active img {/* アクティブ */
+	border: 1px solid #000000;
+}
+/*------------------------------------------------
+	スクロールバー(IEのみ)★
+------------------------------------------------*/
+html {
+	scrollbar-face-color: #C9C9C9;
+	scrollbar-highlight-color: #C9C9C9;
+	scrollbar-shadow-color: #C9C9C9;
+	scrollbar-3dlight-color: #C9C9C9;
+	scrollbar-darkshadow-color: #C9C9C9;
+	scrollbar-track-color: #ECECEC;
+	scrollbar-arrow-color: #ECECEC;
+}
+/*------------------------------------------------
+	フォーム
+------------------------------------------------*/
+input, textarea, select {
+	border: 1px solid #ECECEC;
+	background: #FFFFFF;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku GothicPro", Osaka, sans-serif;
+	font-size: 12px;
+}
+@media screen {
+	input, textarea, select {
+		font-family: Tahoma, Verdana, sans-serif;
+	}
+}
+	/* IE6無効（focusはIE7も） */
+	input[type="text"]:hover, input[type="text"]:focus,
+	input[type="password"]:hover, input[type="password"]:focus,
+	textarea:hover, textarea:focus,
+	select:hover, select:focus {
+		border: 1px solid #000000;
+		background: #FFFFFF;
+	}
+/*================================================
+	3. レイアウト
+================================================*/
+body {
+	background: url("./img/body.gif") left top repeat-x #F0F0F0;/* 背景画像＆背景色★ */
+	text-align: center;
+}
+#container {
+	width: 800px;
+	margin: 0 auto;
+	border: 2px solid #E5E5E5;
+	border-top: 0px solid #000000;
+	background: url("./img/container.gif") right top repeat-y #FAFAFA;
+	text-align: right;
+}
+html>body #container {
+	width: 796px;
+}
+#header {
+	padding: 10px 15px;
+	background: #FFFFFF;
+	text-align: left;
+}
+#menu {
+	padding-bottom: 150px;
+	background: url("./img/spot.jpg") left bottom no-repeat #F0F0F0;
+	text-align: left;
+}
+#logs {
+	float: right;
+	width: 546px;
+}
+#navigation {
+	float: left;
+	width: 250px;
+	text-align: left;
+}
+	@media screen {
+		#logs, #navigation {
+			overflow: hidden;
+		}
+	}
+#diary div.diary, #trackback, #comment, #contents, #work, #form, #env, #canvas, #status, #page, #navi {
+	border-top: 1px solid #FFFFFF;
+	padding-bottom: 30px;
+	background: #FFFFFF;
+	text-align: left;
+	zoom: 1;
+}
+#work {
+	padding-bottom: 15px;
+}
+#footer {
+	float: none;
+	clear: both;
+	zoom: 1;
+}
+/*================================================
+	4. 各部詳細
+================================================*/
+/*------------------------------------------------
+	--- 見出し★
+------------------------------------------------*/
+#diary div.diary h3, #contents h2, #work h2, #form h2, #env h2, #canvas h2, #status h2 {
+	margin: 15px 0 30px 0;
+	padding: 10px 40px 10px 37px;
+	border-left: 3px solid #C9C9C9;
+	background: url("./img/stripe.gif") #F0F0F0;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	text-transform: capitalize;
+	line-height: 1;
+}
+/*------------------------------------------------
+	--- 新着マーク
+------------------------------------------------*/
+em.new {
+	padding: 0 5px;
+	background: #424242;
+	color: #FFFFFF;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+/*------------------------------------------------
+	--- RSSアイコン
+------------------------------------------------*/
+a.rss {
+	padding-left: 15px;
+	background: url("./img/feedicon.gif") 0 50% no-repeat;
+}
+/*------------------------------------------------
+	--- 送信ボタン (主に管理ページ等の)
+------------------------------------------------*/
+#navi form p input, #contents form p input, #form form p input, #work form p input, #env form p input {
+	width: 8em;
+	border: 1px solid #999999;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	background: #696969;
+	color: #FFFFFF;
+}
+/*------------------------------------------------
+	# ヘッダー
+------------------------------------------------*/
+#header h1 {
+	display: inline;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1;
+}
+#header h1 a:link, #header h1 a:visited {
+	color: #5F5F5F;
+	text-decoration: none;
+}
+#header h1 a:hover, #header h1 a:active {
+	color: #C9C9C9;
+	text-decoration: none;
+}
+#header p.description {
+	display: inline;
+	margin-left: 5px;
+	color: #C9C9C9;
+}
+/*------------------------------------------------
+	# メニュー
+------------------------------------------------*/
+#menu h2 {
+	display: none;
+}
+#menu ul {
+	width: 796px;
+	background: #F5F5F5;
+}
+	@media screen {
+		#menu ul {
+			overflow: hidden;
+		}
+	}
+#menu ul li {
+	display: inline;
+}
+#menu ul li a {
+	float: left;
+	width: 130px;
+	border-right: 1px solid #E5E5E5;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	line-height: 2;
+}
+	html>body #menu ul li a {
+		width: 129px;
+	}
+#menu ul li a:link, #menu ul li a:visited {
+	background: #F5F5F5;
+	color: #999999;
+	text-decoration: none;
+}
+#menu ul li a:hover, #menu ul li a:active {
+	background: #FAFAFA;
+	color: #000000;
+	text-decoration: none;
+}
+/*------------------------------------------------
+	# ナビゲーション
+------------------------------------------------*/
+#navigation div.block {
+	padding: 15px;
+	border-top: 1px solid #F0F0F0;
+	color: #898989;
+	line-height: 1.5;
+}
+#navigation div.block a:link, #navigation div.block a:visited {
+	border-bottom: 1px solid #ECECEC;
+	color: #898989;
+	text-decoration: none;
+}
+#navigation div.block a:hover, #navigation div.block a:active {
+	border-bottom: 1px solid #000000;
+	color: #000000;
+	text-decoration: none;
+}
+#navigation div.block a img {
+	border: 0px solid #000000;
+}
+#navigation div.block h2 {
+	margin-bottom: 10px;
+	color: #C9C9C9;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+}
+#navigation div.block p {
+	margin: 10px 5px 0 5px;
+}
+#navigation div.block ul {
+	margin: 10px 5px 0 5px;
+}
+#navigation div.block ul li ul {
+	margin: 0;
+}
+#navigation div.block ul li {
+	padding-left: 15px;
+	background: url("./img/list01.gif") 0 0.4em no-repeat;
+}
+#navigation div.block ul li ul li {
+	padding-left: 15px;
+	background: url("./img/list02.gif") 0 0.4em no-repeat;
+}
+#navigation div.block dl {
+	margin: 10px 5px 0 5px;
+}
+/*------------------------------------------------
+	- カレンダー
+------------------------------------------------*/
+#navigation div.calendar table {
+	width: 220px;
+}
+#navigation div.calendar table th,
+#navigation div.calendar table td {
+	border: 1px solid #ECECEC;
+	color: #797979;
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+#navigation div.calendar table th {
+	background: #FDFDFD;
+}
+#navigation div.calendar table tr.week td {
+	background: #F5F5F5;
+}
+#navigation div.calendar table td a {
+	display: block;
+}
+#navigation div.calendar table td a:link, #navigation div.calendar table td a:visited {
+	border-bottom: 0px solid #000000;
+	background: #F0F0F0;
+	text-decoration: none;
+}
+#navigation div.calendar table td a:hover, #navigation div.calendar table td a:active {
+	border-bottom: 0px solid #000000;
+	background: #FCFCFC;
+	text-decoration: none;
+}
+#navigation div.calendar table td.today {/* カレンダー本日 */
+	font-weight: bold;
+}
+/*------------------------------------------------
+	- 新着ミニ画像
+------------------------------------------------*/
+#navigation div.image img {
+	margin: 4px 0 1px 0;
+}
+/*------------------------------------------------
+	- 新着記事、新着TB、新着コメ
+------------------------------------------------*/
+#navigation div.entrylist dl dt, #navigation div.cmtlist dl dt, #navigation div.tblist dl dt {
+	padding-left: 15px;
+	background: url("./img/list01.gif") 0 0.4em no-repeat;
+}
+#navigation div.entrylist dl dd, #navigation div.cmtlist dl dd, #navigation div.tblist dl dd {
+	padding-left: 15px;
+	color: #C9C9C9;
+}
+/*------------------------------------------------
+	- 過去ログ
+------------------------------------------------*/
+#navigation div.archive ul {
+	zoom: 1;
+}
+#navigation div.archive ul li {
+	display: inline;
+	padding: 0;
+	background: none;
+}
+#navigation div.archive ul li a {
+	white-space: nowrap;
+}
+/*------------------------------------------------
+	- 検索窓
+------------------------------------------------*/
+#navigation div.search p input.submit {
+	border: 1px solid #ECECEC;
+	background: #F0F0F0;
+}
+/*------------------------------------------------
+	# 記事
+------------------------------------------------*/
+#diary h2 {
+	display: none;
+}
+#diary div.diary h3.subject {
+	margin-bottom: 0;
+	text-transform: none;
+}
+#diary div.diary p.info {
+	clear: both;
+	margin: 0 40px 0 40px;
+	color: #C9C9C9;
+}
+#diary div.diary p.info1 {
+	margin: 0;
+	padding: 10px 40px 10px 37px;
+	border-left: 3px solid #ECECEC;
+	background: #FAFAFA;
+	line-height: 1;
+}
+#diary div.diary p.info2 {
+	text-align: right;
+}
+#diary div.diary p.info a:link, #diary div.diary p.info a:visited {
+	border-bottom: 1px solid #ECECEC;
+	color: #999999;
+	text-decoration: none;
+}
+#diary div.diary p.info a:hover, #diary div.diary p.info a:active {
+	border-bottom: 1px solid #000000;
+	color: #000000;
+	text-decoration: none;
+}
+#diary div.diary div.text {
+	margin: 30px 40px 30px 40px;
+}
+/*------------------------------------------------
+	- インデックスページ
+------------------------------------------------*/
+#diary div.indexpage h4 a {
+	font-size: 10px;
+}
+#diary div.indexpage h4 a:link, #diary div.indexpage h4 a:visited {
+	text-decoration: none;
+}
+#diary div.indexpage h4 a:hover, #diary div.indexpage h4 a:active {
+	text-decoration: none;
+}
+/*------------------------------------------------
+	- トラックバック・コメント(記事一覧表示)
+------------------------------------------------*/
+#diary div.list {
+	margin: 0 40px 30px 40px;
+	text-align: left;
+}
+#diary div.list h4 {
+	border-bottom: 1px solid #ECECEC;
+	color: #C9C9C9;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
+}
+#diary div.list ul {
+	margin: 0 0 0 30px;
+	background: #FCFCFC;
+}
+#diary div.list ul li {
+	padding: 10px 15px;
+	border-bottom: 1px solid #ECECEC;
+	font-size: 10px;
+}
+#diary div.list dl {
+	margin: 0 0 0 30px;
+	background: #FCFCFC;
+} 
+#diary div.list dl dt {
+	padding: 10px 15px;
+	color: #000000;
+}
+#diary div.list dl dd {
+	padding: 0 15px;
+	border-bottom: 1px solid #ECECEC;
+}
+#diary div.list dl dd p {
+	padding-bottom: 10px;
+}
+/*------------------------------------------------
+	#トラックバック・コメント(個別ページ表示)
+------------------------------------------------*/
+#trackback h2, #comment h2 {
+	margin: 0 40px 0 40px;
+	border-bottom: 1px solid #ECECEC;
+	color: #C9C9C9;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
+}
+#trackback ul, #comment ul {
+	margin: 0 40px 0 40px;
+	padding: 5px 0;
+	border-bottom: 1px solid #ECECEC;
+}
+#trackback dl {
+	margin: 0 40px 0 70px;
+	padding: 10px 15px;
+	border-bottom: 1px solid #ECECEC;
+	background: #FCFCFC;
+}
+#trackback dl dd {
+	font-size: 10px;
+}
+#comment div.comment {
+	margin: 0 40px 0 70px;
+	padding: 10px 15px;
+	border-bottom: 1px solid #ECECEC;
+	background: #FCFCFC;
+}
+#comment div.comment h3 {
+	color: #000000;
+}
+#comment div.comment div.text p {
+	margin: 0;
+	padding-top: 10px;
+}
+/*------------------------------------------------
+	# ページナビゲーション
+------------------------------------------------*/
+#page h2, #navi h2 {
+	display: none;
+}
+#page ul, #navi ul {
+	margin: 0 40px;
+	color: #C9C9C9;
+	line-height: 2;
+}
+#navi ul {
+	text-align: right;
+}
+#page ul li {
+	display: inline;
+	margin-right: 5px;
+}
+#page ul li a, #navi ul li a {
+	padding: 1px 5px;
+}
+#page ul li a:link, #page ul li a:visited,
+#navi ul li a:link, #navi ul li a:visited {
+	border: 1px solid #F0F0F0;
+	background: #FAFAFA;
+	color: #999999;
+	text-decoration: none;
+}
+#page ul li a:hover, #page ul li a:active,
+#navi ul li a:hover, #navi ul li a:active {
+	border: 1px solid #E5E5E5;
+	background: #F0F0F0;
+	color: #000000;
+	text-decoration: none;
+}
+#navi ul li {
+	display: inline;
+	margin-left: 5px;
+}
+#navi form {
+	margin: 0 40px;
+}
+#navi form dl dt {
+	display: none;
+}
+#navi form dl dd {
+	float: left;
+	clear: left;
+}
+/*------------------------------------------------
+	# コンテンツ
+------------------------------------------------*/
+#contents h3 {
+	margin: 30px 40px 0 40px;
+	padding-bottom: 5px;
+	background: url("./img/heading03.gif") left bottom repeat-x;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+#contents h4 {
+	margin: 15px 40px 0 40px;
+	padding-bottom: 5px;
+	background: url("./img/heading04.gif") left bottom repeat-x;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+#contents h5, #contents h6 {
+	margin: 15px 40px 0 40px;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+#contents p, #contents ul, #contents dl, #contents table {
+	margin: 15px 40px 0 40px;
+}
+#contents dl.trackbackUrl input {
+	background: #F5F5F5;
+}
+#contents img {
+	margin: 3px 0 2px 0;
+}
+#contents table th, #contents table td {
+	padding: 5px 10px;
+	border: 1px solid #ECECEC;
+	background: #FDFDFD;
+}
+#contents table th {
+	background: #F5F5F5;
+	white-space: nowrap;
+}
+#contents table img {
+	margin: 5px 0;
+}
+#contents form {
+	margin: 15px 40px 0 40px;
+	padding: 9px 14px;
+	border: 1px solid #F5F5F5;
+	background: url("./img/stripe.gif") #FCFCFC;
+}
+#contents form p, #contents form ul, #contents form dl, #contents form table {
+	margin: 5px 0;
+}
+/*------------------------------------------------
+	- アルバム
+------------------------------------------------*/
+#contents ul.album {
+	border-bottom: 1px solid #ECECEC;
+	line-height: 1;
+}
+#contents ul.album li {
+	display: inline;
+}
+#contents ul.album li img {
+	margin: 0 0 5px 0;
+}
+#contents ul.album li a {
+	display: block;
+	padding: 5px;
+	border-top: 1px solid #ECECEC;
+}
+#contents ul.album li a:link, #contents ul.album li a:visited {
+	background: #FDFDFD;
+	text-decoration: none;
+}
+#contents ul.album li a:hover, #contents ul.album li a:active {
+	background: #FAFAFA;
+	text-decoration: none;
+}
+/*------------------------------------------------
+	- アイコン
+------------------------------------------------*/
+#contents ul.iconlist {
+	border-bottom: 1px solid #ECECEC;
+}
+#contents ul.iconlist li {
+	border-top: 1px solid #ECECEC;
+}
+#contents ul.iconlist li img {
+	margin: 4px 0;
+	vertical-align: top;
+}
+/*------------------------------------------------
+	# 処理選択
+------------------------------------------------*/
+#work form {
+	margin: 15px 40px 0 40px;
+}
+#work form dl dt {
+	display: none;
+}
+#work form dl dd {
+	float: left;
+	clear: left;
+}
+/*------------------------------------------------
+	# フォーム
+------------------------------------------------*/
+#form p, #form ul, #form dl {
+	margin: 15px 40px 0 40px;
+}
+#form form {
+	margin: 15px 40px 0 40px;
+	padding: 9px 14px;
+	border: 1px solid #F5F5F5;
+	background: url("./img/stripe.gif") #FCFCFC;
+}
+#form form p, #form form ul, #form form dl, #form form dl dd {
+	margin: 5px 0;
+}
+#form form dl dt {
+	float: left;
+	clear: left;
+	width: 6em;
+}
+/*------------------------------------------------
+	# 環境設定
+------------------------------------------------*/
+#env p, #env ul, #env dl, #env table {
+	margin: 15px 40px 0 40px;
+}
+#env table th, #env table td {
+	padding: 5px 10px;
+	border: 1px solid #ECECEC;
+	background: #FDFDFD;
+}
+#env table th {
+	background: #F5F5F5;
+	white-space: nowrap;
+}
+#env table img {
+	margin: 5px 0;
+}
+#env form {
+	margin: 15px 40px 0 40px;
+	padding: 9px 14px;
+	border: 1px solid #F5F5F5;
+	background: url("./img/stripe.gif") #FCFCFC;
+}
+#env form h3 {
+	margin: 30px 0 15px 0;
+	padding-left: 12px;
+	border-left: 3px solid #C9C9C9;
+	background: #F0F0F0;
+	color: #000000;
+	letter-spacing: 3px;
+}
+#env form p, #env form ul, #env form dl, #env form table {
+	margin: 5px 0;
+}
+#env form dl dt em {
+	color: #CC0000;
+}
+#env form dl dd {
+	margin-bottom: 5px;
+}
+/*------------------------------------------------
+	# キャンバス
+------------------------------------------------*/
+#canvas applet {
+	float: left;
+	margin-left: 40px;
+}
+#canvas:after {
+	content: ".";
+	display: block;
+	visibility: hidden;
+	height: 0.1px;
+	font-size: 0.1em;
+	line-height: 0;
+	clear: both;
+}
+#canvas {
+	zoom: 1;
+}
+/*------------------------------------------------
+	# ステータス
+------------------------------------------------*/
+#status h3 {
+	margin: 30px 40px 0 40px;
+	padding-bottom: 5px;
+	background: url("./img/heading03.gif") left bottom repeat-x;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+#status p, #status ul, #status dl {
+	margin: 15px 40px 0 40px;
+}
+#status dl dt {
+	float: left;
+	clear: left;
+	width: 10em;
+}
+#status dl dd {
+	margin: 5px 0;
+}
+/*------------------------------------------------
+	# フッター
+------------------------------------------------*/
+#footer ul {
+	padding: 10px 15px;
+	background: #FAFAFA;
+	font-size: 10px;
+	text-align: right;
+}
+#footer ul li {
+	display: inline;
+	margin-left: 5px;
+}
+#footer ul li a:link, #footer ul li a:visited {
+	border-bottom: 1px solid #ECECEC;
+	color: #999999;
+	text-decoration: none;
+}
+#footer ul li a:hover, #footer ul li a:active {
+	border-bottom: 1px solid #000000;
+	color: #000000;
+	text-decoration: none;
+}
+#footer address {
+	padding: 10px 15px;
+	border-top: 1px solid #F0F0F0;
+	background: #F5F5F5;
+	color: #C9C9C9;
+	font-size: 10px;
+	text-align: right;
+}
+#footer address a:link, #footer address a:visited {
+	color: #C9C9C9;
+	text-decoration: none;
+}
+#footer address a:hover, #footer address a:active {
+	color: #000000;
+	text-decoration: underline;
+}
+/*================================================
+	5. 本文装飾
+================================================*/
+div.text h4 {
+	margin: 30px 0 15px 0;
+	padding-bottom: 5px;
+	background: url("./img/heading03.gif") left bottom repeat-x;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+div.text h5 {
+	margin: 15px 0;
+	padding-bottom: 5px;
+	background: url("./img/heading04.gif") left bottom repeat-x;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+div.text h6 {
+	margin: 15px 0;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: 3px;
+}
+div.text p {
+	margin: 15px 0;
+}
+div.text ul {
+	margin: 15px 0;
+}
+div.text ul li {
+	margin: 5px 0;
+	padding-left: 15px;
+	background: url("./img/list03.gif") 0 0.3em no-repeat;
+}
+div.text ol {
+	margin: 15px 0;
+	list-style: decimal outside;
+}
+div.text ol li {
+	margin: 5px 0 5px 3em;
+}
+div.text dl {
+	margin: 15px 0;
+}
+div.text dl dt {
+	margin: 5px 0;
+	color: #000000;
+	letter-spacing: 3px;
+}
+div.text dl dd {
+	margin: 5px 0 5px 15px;
+	padding-left: 13px;
+	border-left: 2px solid #ECECEC;
+}
+div.text blockquote {
+	margin: 15px 0;
+	padding: 1px 0 0 30px;
+	background: url("./img/blockquote.gif") 0 0 no-repeat;
+	color: #999999;
+}
+div.text pre {
+	width: 85%;
+	margin: 15px 0;
+	padding: 15px;
+	background: #F5F5F5;
+}
+	@media screen {
+		div.text pre {
+			overflow: scroll;
+		}
+	}
+div.text table {
+	margin-left: 15px;
+}
+div.text table th {
+	padding: 5px 10px;
+	border: 1px solid #ECECEC;
+	background: #F5F5F5;
+}
+div.text table td {
+	padding: 5px 10px;
+	border: 1px solid #ECECEC;
+	background: #FDFDFD;
+	vertical-align: top;
+}
+div.text table img {
+	margin: 5px 0;
+}
+/*------------------------------------------------
+	--- 記事内画像余白★
+------------------------------------------------*/
+div.text img {
+	margin: 5px;
+}
+/*================================================
+	6. おまけ ※omake/ReadMe.html参照
+================================================*/
+/*------------------------------------------------
+	(plugin) パンくずリスト
+------------------------------------------------*/
+p.pluginTopicpath {
+	padding: 15px 15px 0 15px;
+	background: #FFFFFF;
+	color: #999999;
+	text-align: left;
+	line-height: 1.3;
+}
+p.pluginTopicpath a {
+	padding: 1px 5px;
+}
+p.pluginTopicpath a:link, p.pluginTopicpath a:visited {
+	background: #F0F0F0;
+	color: #000000;
+	text-decoration: none;
+}
+p.pluginTopicpath a:hover, p.pluginTopicpath a:active {
+	background: #F5F5F5;
+	color: #999999;
+	text-decoration: none;
+}
+/*------------------------------------------------
+	(plugin) ページ移動
+------------------------------------------------*/
+p.pluginPage {
+	padding: 0 40px 30px 40px;
+	padding-top: 5px;
+	background: #FFFFFF;
+	color: #C9C9C9;
+	text-align: right;
+}
+/*------------------------------------------------
+	(plugin) タグ
+------------------------------------------------*/
+p.pluginTagging {
+	padding: 5px 15px 5px 30px;
+	background: url("./img/tag.gif") 8px 50% no-repeat #FCFCFC;
+}
+p.pluginTagging a {
+	margin-right: 5px;
+}
+/*------------------------------------------------
+	(plugin) タグクラウド
+------------------------------------------------*/
+#navigation div.block ul.tag {
+	display: block;
+	line-height: 1.1;
+	zoom: 1;
+}
+#navigation div.block ul.tag li {
+	display: inline;
+	padding: 0;
+	background: none;
+	color: #C9C9C9;
+}
+#navigation div.block ul.tag li a {
+	zoom: 1;
+}

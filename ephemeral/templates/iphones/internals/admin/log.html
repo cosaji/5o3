@@ -1,0 +1,44 @@
+{include file='iphones/header.html'}
+		<section>
+			<h1>ログ閲覧</h1>
+			<ul>
+				<li>登録されたログは以下のとおりです。</li>
+			</ul>
+			<table summary="ログ">
+				<thead>
+					<tr>
+						<th>日時</th>
+						<th>ユーザーID</th>
+						<th>IPアドレス</th>
+						<th>本文</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>日時</th>
+						<th>ユーザーID</th>
+						<th>IPアドレス</th>
+						<th>本文</th>
+					</tr>
+				</tfoot>
+				<tbody>
+					<!--{foreach from=$logs|smarty:nodefaults item='log'}-->
+					<tr>
+						<td><!--{if $log.created|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$log.created|date_format:'%H:%M:%S'}<!--{else}-->{$log.created|date_format:'%Y/%m/%d'}<!--{/if}--></td>
+						<td>{$log.user_id}</td>
+						<td>{$log.ip}</td>
+						<td>{$log.text}</td>
+					</tr>
+					<!--{/foreach}-->
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h1>ページ移動</h1>
+			<ul class="menu">
+				<li><a href="{$freo.core.http_file}/admin/log?page=1">最初のページ</a></li>
+				<!--{if $freo.query.page > 1}--><li><a href="{$freo.core.http_file}/admin/log?page={$freo.query.page-1}">前のページ</a></li><!--{/if}-->
+				<!--{if $log_page > $freo.query.page}--><li><a href="{$freo.core.http_file}/admin/log?page={$freo.query.page+1}">次のページ</a></li><!--{/if}-->
+			</ul>
+		</section>
+{include file='iphones/footer.html'}

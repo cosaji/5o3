@@ -1,0 +1,20 @@
+td,body    {
+color: #302833;
+font-size: 11px;
+line-height: 125%;
+margin-top: px;
+margin-left: 50px;
+background-color:#ffefdf;
+background-image: url("m/bg.png");
+background-repeat: repeat-x;
+background-attachment: fixed;
+}
+a:link,a:visited,a:active{
+color: #00aa44; text-decoration: none
+}
+a:visited{
+color: #6b8e23; text-decoration: none
+}
+a:hover{
+color: #e95464
+}
