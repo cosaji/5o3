@@ -22,7 +22,6 @@
 
 $sites[]=array('site'=>'a pois','name'=>'kb','url'=>'http://kwne.jp/~apois/','bannerUrl'=>'b/apois.gif',);
 $sites[]=array('site'=>'[Carpe-DM]','name'=>'京作','url'=>'http://carpe-dm.sakura.ne.jp/','bannerUrl'=>'http://carpe-dm.sakura.ne.jp/banner.gif',);
-$sites[]=array('site'=>'ix','name'=>'四季絵','url'=>'http://lilycia.net/','bannerUrl'=>'http://lilycia.net//b.gif',);
 $sites[]=array('site'=>'landmark','name'=>'かしわば','url'=>'http://landmark.konjiki.jp','bannerUrl'=>'http://landmark.konjiki.jp/banner.png',);
 //$sites[]=array('site'=>'','name'=>'','url'=>'','bannerUrl'=>'',);
 
@@ -43,21 +42,17 @@ EOD;
 	echo $HTML;
 }	
 ?>
-									<!--■■■ A to Z ■■■-->
-									<b>illustration</b>（A to Z）<br><br>
-									<?php
-										foreach($sites as $key => $value){
-											showLink($sites[$key]);
-										}
-									?>
-									<a href="http://homepage2.nifty.com/cocozero/index.html" target="_blank">
-									<img src="http://homepage2.nifty.com/cocozero/banner.gif" alt="Little Garden" height="40" width="200" border="0"><br>
-									Little Garden</a>：山崎零さん
-									<br><br>
-<a href="http://icon.gejigeji.jp/" target="_blank">
-<img src="http://icon.gejigeji.jp/banner.jpg" alt="mogurutto" height="40" width="200" border="0"><br>
-mogurutto</a>：うやまさん
-	<br><br>
+<!--■■■ A to Z ■■■-->
+<b>illustration</b>（A to Z）<br><br>
+<?php
+	foreach($sites as $key => $value){
+		showLink($sites[$key]);
+	}
+?>
+<a href="http://abendgebet.jp/" target="_blank">
+<img src="http://abendgebet.jp/icon/ag.gif" alt="OWLLIGHT" height="40" width="200" border="0"><br>
+OWLLIGHT</a>：萩オスさん
+<br><br>
 <a href="http://nd60.moo.jp" target="_blank">
 <img src="http://nd60.moo.jp/banner.gif" alt="Nd60" height="40" width="200" border="0"><br>
 Nd60</a>：sumiさん
@@ -69,34 +64,10 @@ REVIVE</a>：丘さん
 <a href="http://million-field.sakura.ne.jp/steelbeat/" target="_blank">
 <img src="http://million-field.sakura.ne.jp/steelbeat/banner.jpg" alt="Steelbeat" height="40" width="200" border="0"><br>
 Steelbeat</a>：鷹山弾さん
-	<br><br>
-<a href="http://vynn.net/" target="_blank">
-<img src="http://vynn.net/vynn.jpg" alt="Zzzz" height="40" width="200" border="0"><br>
-vynn</a>：vyuさん
-	<br><br>
-<a href="http://pillowfighters.com" target="_blank">
-<img src="b/zzzz.gif" alt="Zzzz" height="40" width="200" border="0"><br>
-Zzzz</a>：こうもり傘さん
 
-								<!--■■■ あいうえお ■■■-->
-								</td>
-								<td width="225"><b>illustration</b>（123, あいうえお）
-								<br><br>
-								<a href="http://rinsumi.yukishigure.com/" target="_blank">
-								<img src="http://rinsumi.yukishigure.com/banner.PNG" alt="4649" height="40" width="200" border="0"><br>
-								4649</a>：清澄さん
-									<br><br>
-									<a href="http://abendgebet.jp/" target="_blank">
-									<img src="http://abendgebet.jp/icon/ag.gif" alt="ABENDGEBET" height="40" width="200" border="0"><br>
-									佳日の朝</a>：萩オスさん
-									<br><br>
-<a href="http://garakuta-yupopo.parallel.jp/maze-museum/" target="_blank">
-<img src="http://garakuta-yupopo.parallel.jp/maze-museum/banner.gif" alt="ガラクタ迷宮美術館" height="40" width="200" border="0"><br>
-ガラクタ迷宮美術館</a>：ユミさん
-	<br><br>
-<a href="http://shoneny.eek.jp/" target="_blank">
-<img src="http://shoneny.eek.jp/banner.gif" alt="少年ワイ" height="40" width="200" border="0"><br>
-少年ワイ</a>：三多洋次さん
+<!--■■■ あいうえお ■■■-->
+</td>
+<td width="225"><b>illustration</b>（123, あいうえお）
 	<br><br>
 <a href="http://sekitou.sub.jp/" target="_blank">
 <img src="http://sekitou.sub.jp/banner.gif" alt="赤橙" height="40" width="200" border="0"><br>
@@ -175,19 +146,19 @@ Zzzz</a>：こうもり傘さん
 								<td><B>匙 まりこ</B> ... SAJI Mariko<br></td>
 							</tr><tr>
 								<td>url：</td>
-								<td>http://hitosaji.net/</td>
+								<td>http://5o3/main.jp/hitosaji/</td>
 							<tr valign="top">
 								<td>banner：</td>
 								<td>
 									<img src="b.jpg" alt="banner" height="40" width="200" border="0">
-									http://hitosaji.net/b.jpg<br>
+									http://5o3/main.jp/hitosaji/b.jpg<br>
 									<img src="b.gif" alt="banner" height="40" width="200" border="0">
-									http://hitosaji.net/b.gif<br>
+									http://5o3/main.jp/hitosaji/b.gif<br>
 								</td>
 							</tr>
 						</table>
 						<br>
-						リンクはトップページ（http://hitosaji.net/）にお願いいたします。<br>
+						リンクはトップページ（http://5o3/main.jp/hitosaji/）にお願いいたします。<br>
 						創作サイトさんからのリンクであれば、ご報告は特に必要ありません。<br>
 					</p>
 			</div><!--本文-->
